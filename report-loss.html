@@ -1,1 +1,86 @@
 <!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>BOUNTY HUNTING ONLINE</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--<link rel="stylesheet" href="css/normalize.css">-->
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<!--TOP-->
+		<div class="top">
+			<h2>BountyHunter.com</h2>
+			<h5>Earn money. Save grandmas. Be a Badass.</h5>
+		</div>
+		<!--LEFT-->
+		<!--<div class="left">-->
+		<!--	<font size="4">-->
+		<!--	<li><a href="index.html">Local Crime</a></li>-->
+		<!--	<li><a href="report-loss.html" class="active">Make a Report</a></li>-->
+		<!--	<li><a href="http://bit.ly/4kb77v">Lost Your Shit?</a></li>-->
+		<!--	<li><a href="http://bit.ly/4kb77v">About</a></li>-->
+		<!--	</font>-->
+		<!--</div>-->
+			
+		<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+		<!--	<div class="container-fluid">-->
+		<!--		<div class="navbar-header">-->
+		<!--			<a class="navbar-brand" href="#">WebSiteName</a>-->
+		<!--		</div>-->
+		<!--	<ul class="nav navbar-nav">-->
+		<!--		<li class="active"><a href="#">Home</a></li>-->
+		<!--		<li><a href="report-loss.html">Make a Report</a></li>-->
+		<!--		<li><a href="http://bit.ly/4kb77v">Stats</a></li>-->
+		<!--		<li><a href="http://bit.ly/4kb77v">About</a></li>-->
+		<!--		</ul>-->
+		<!--	</div>-->
+		<!--</nav>-->
+		
+		<!--MAIN-->
+		<div class="main" style="padding-left: 10%; padding-top: 10%;">
+			<form id="entry" action="index.html">
+				
+				<!--Newer Version-->
+				What kind of report would you like to make?<br>
+				<input type="radio" name="radiobtn" value="Theft"/>Theft<br>
+				<input type="radio" name="radiobtn" value="Burglury"/>Burglury<br>
+				<input type="radio" name="radiobtn" value="Murder"/>Murder<br>
+				<input type="radio" name="radiobtn" value="Prison Break"/>Prison Break<br>
+				<input type="radio" name="radiobtn" value="Assault"/>Assault<br>
+				<input type="radio" name="radiobtn" value="Kidnapping"/>Kidnapping<br>
+				<input type="radio" name="radiobtn" value="Indecent Exposure"/>Indecent Exposure<br>
+				<input type="radio" name="radiobtn" value="Other"/>Other<br>
+				When did the incident occur?<br>
+				<input type="date" id="date"/><br>
+				Where did the incident occur?<br>
+				<input type="text" id="loc" placeholder="City" required/><br><br>
+				Title your post<br>
+				<input type="text" id="title" placeholder="Title"/><br>
+				Set the reward<br>
+				<input type="text" id="money" placeholder="Reward"/><br>
+				Give more details. Don't forget to leave contact information.<br>
+				<textarea rows="3" cols="50" id="desc"></textarea>
+				<input type="submit" value="Submit" />
+				
+			</form>
+		</div>
+		
+	  <!--Scripts at the bottom so to not delay page load-->
+	  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+	  <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+	  <script src="js/main.js"></script>
+	</body>
+	
+	<script src=js/main.js></script>
+	<script>
+		$('#entry').submit(function event(){
+			createNewListing();
+		});
+	</script>
+</html>

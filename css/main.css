@@ -1,0 +1,74 @@
+
+            body {
+                margin: 0;
+            }
+            .top {
+                position:absolute;
+                text-align: center;
+                left:0; right:0; top:0;
+                height: 12%;
+                z-index:1000;
+                background: #9FA8DA;
+            }
+            .btnSet{
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                margin-top: -40px;
+                margin-left: -50px;
+                z-index: 500;
+            }
+            .left {
+                position:fixed;
+                left:10%; top:12%; bottom: 0;
+                width: 20%;
+                background: #f1f1f1;
+            }
+            .main {
+                position: absolute;
+                left:10%; top:12%;/*25%;*/ right:10%;
+                padding: 1%;
+                padding-top:7%;
+                background: lightgrey;
+            }
+            #element1 {
+                    display:inline-block;
+                    margin-left:1%;
+                    text-align:left;
+            } 
+            #element2 {
+                    display:inline-block;
+                    margin-right:1%;
+                    float:right;
+            } 
+            /*ul {*/
+            /*    list-style-type: none;*/
+            /*    margin: 0;*/
+            /*    padding: 0;*/
+            /*    width: 25%;*/
+            /*    background-color: #f1f1f1;*/
+            /*    position: fixed;*/
+            /*    height: 100%;*/
+            /*    overflow: auto;*/
+            /*}*/
+            li a {
+                display: block;
+                color: #000;
+                padding: 8px 0 8px 16px;
+                text-decoration: none;
+            }
+            li a.active {
+                background-color: #4CAF50;
+                color: white;
+                pointer-events: none;
+                cursor: default;
+            }
+            li a:hover:not(.active) {
+                background-color: #555;
+                color: white;
+            }
+            #listTitle{
+                border-style: double;
+                text-align: center;
+            }
+
