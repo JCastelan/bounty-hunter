@@ -47,8 +47,8 @@ Listing.prototype.update = function () {
 function displayListing (listing) {
     var listings = $('#listings');
 	
-	var listingHeader = $("<h3>");
-	var listingBox = $("<div>");
+	var listingHeader = $("<h3>",{id:"listHeader"});
+	var listingBox = $("<div>",{id:"listBox"});
 	listings.append(listingHeader);
     listings.append(listingBox);
     
@@ -56,24 +56,30 @@ function displayListing (listing) {
     listingTitle.append($("<b>").append(listing.title));
 	listingHeader.append(listingTitle);
     
-    var listingDate =$("<p>",{id:"listDate"});
-    listingDate.append(listing.date);
-	listingHeader.append("Date:"+listingDate);
+    var listingDate =$("<span>",{id:"listDate"});
+    listingDate.append("Date:"+listing.date);
+	listingHeader.append(listingDate);
     
-    var listingLoc =$("<p>",{id:"listLoc"});
+    var listingLoc =$("<span>",{id:"listLoc"});
     listingLoc.append(listing.loc);
 	listingHeader.append(listingLoc);
 	
-    var listingDesc =$("<p>",{id:"listDesc"});
+    var listingDesc =$("<spanp>",{id:"listDesc"});
     listingDesc.append(listing.desc);
-	listingBox.append(listingDesc);
 	
-    var listingType =$("<p>",{id:"listType"});
-    listingType.append(listing.type);
-	listingBox.append(listingType);
+    var listingDescbox =$("<div>",{id:"listDescbox"});
+	listingDescbox.append(listingDesc);
+	
+    var listingType =$("<span>",{id:"listType"});
+    listingType.append("Type of Crime: "+listing.type);
+	listingHeader.append(listingType);
+	
+    var listingPhoto =$("<img>",{id:"listPhoto",src:listing.photo});
+	listingDescbox.append(listingPhoto);
+	listingBox.append(listingDescbox);
 	
     var listingMoney =$("<p>",{id:"listMoney"});
-    listingMoney.append(listing.money);
+    listingMoney.append("Offer stands at:  "+listing.money);
 	listingBox.append(listingMoney);
 }
 
@@ -101,8 +107,7 @@ function createNewListing () {
 		$('#desc').val(), 
 		$('#loc').val(), 
 		$('#money').val(), 
-		//$('#photo').val(), 
-		"photo",
+		$('#photo').val(),
 		$('#title').val(), 
 		$('input[name=radiobtn]:checked').val()
 	);
@@ -152,7 +157,7 @@ function removeFromFB (key) {
 var testListings = 10;
 listRef.set({}); // clear db for testing
 for (var i = 0; i < testListings; i++) {
-	var listing = new Listing (2000-2-30, "hairy stuff", "Santa Cruz", 40, "empty", "Lost Hair " + i, "LF");
+	var listing = new Listing ("2000-2-30", "hairy stuff", "Santa Cruz", 40, "https://i.ytimg.com/vi/oM1EVAYahFE/maxresdefault.jpg", "Lost Hair " + i, "LF");
 	addToFB(listing);
 }
 

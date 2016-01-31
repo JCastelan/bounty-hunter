@@ -4,11 +4,16 @@
             }
             .top {
                 position:absolute;
+                color: white;
+                font-family:Tahoma;
                 text-align: center;
                 left:0; right:0; top:0;
-                height: 12%;
+                height: 9%;
                 z-index:1000;
-                background: #9FA8DA;
+                background: #303F9F;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
             }
             .btnSet{
                 position: absolute;
@@ -18,15 +23,9 @@
                 margin-left: -50px;
                 z-index: 500;
             }
-            .left {
-                position:fixed;
-                left:10%; top:12%; bottom: 0;
-                width: 20%;
-                background: #f1f1f1;
-            }
             .main {
                 position: absolute;
-                left:10%; top:12%;/*25%;*/ right:10%;
+                left:10%; top:9%;/*25%;*/ right:10%;
                 padding: 1%;
                 padding-top:7%;
                 background: lightgrey;
@@ -69,6 +68,48 @@
             }
             #listTitle{
                 border-style: double;
+                border-color: red blue yellow green;
                 text-align: center;
+                font-size:2em;
+            }
+            #listDate{
+                position:relative;
+                float:left;
+            }
+            #listLoc{
+                position:relative;
+                float:right;
+            }
+            #listDesc{
+                min-height:100px;
+                overflow:auto;
+            }
+            #listMoney{
+                text-align:center;
+                border-style:groove;
+                border-color:green;
+                
+            }
+            #listType{
+                float:right;
+                position:relative;
+                right:35%;
+            }
+            #listHeader{
+                overflow:auto;
+            }
+            #listBox{
+                overflow:auto;
+            }
+            #listPhoto{
+                max-height:200px;
+                max-width:200px;
+                float:right;
+            }
+            #listDescbox{
+                min-height:200px;
+                min-width:100px;
+                border-style:dotted;
+                border-color:purple;
             }
 
