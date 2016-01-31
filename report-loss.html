@@ -15,40 +15,17 @@
 	<body>
 		<!--TOP-->
 		<div class="top">
-			<h2>BountyHunter.com</h2>
-			<h5>Earn money. Save grandmas. Be a Badass.</h5>
+			<a href="index.html"><img src="http://80x15.com/gen_logos/dologo.php?do=true&font_text=BountyHunter.com&text_color=FFFFFF&font_type=twitter&font_size=40&shadow=127" width="577" height="93" alt="BountyHunter.com" /></a>
 		</div>
-		<!--LEFT-->
-		<!--<div class="left">-->
-		<!--	<font size="4">-->
-		<!--	<li><a href="index.html">Local Crime</a></li>-->
-		<!--	<li><a href="report-loss.html" class="active">Make a Report</a></li>-->
-		<!--	<li><a href="http://bit.ly/4kb77v">Lost Your Shit?</a></li>-->
-		<!--	<li><a href="http://bit.ly/4kb77v">About</a></li>-->
-		<!--	</font>-->
-		<!--</div>-->
-			
-		<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
-		<!--	<div class="container-fluid">-->
-		<!--		<div class="navbar-header">-->
-		<!--			<a class="navbar-brand" href="#">WebSiteName</a>-->
-		<!--		</div>-->
-		<!--	<ul class="nav navbar-nav">-->
-		<!--		<li class="active"><a href="#">Home</a></li>-->
-		<!--		<li><a href="report-loss.html">Make a Report</a></li>-->
-		<!--		<li><a href="http://bit.ly/4kb77v">Stats</a></li>-->
-		<!--		<li><a href="http://bit.ly/4kb77v">About</a></li>-->
-		<!--		</ul>-->
-		<!--	</div>-->
-		<!--</nav>-->
 		
 		<!--MAIN-->
 		<div class="main" style="padding-left: 10%; padding-top: 10%;">
+			<h3 style="margin-left:-13%; margin-top: -7%; margin-bottom:2%;text-align:center">Make a report</h3>
 			<form id="entry" action="index.html">
 				
 				<!--Newer Version-->
 				What kind of report would you like to make?<br>
-				<input type="radio" name="radiobtn" value="Theft"/>Theft<br>
+				<input type="radio" name="radiobtn" value="Lost Item"/>Lost Item<br>
 				<input type="radio" name="radiobtn" value="Burglury"/>Burglury<br>
 				<input type="radio" name="radiobtn" value="Murder"/>Murder<br>
 				<input type="radio" name="radiobtn" value="Prison Break"/>Prison Break<br>
@@ -64,11 +41,13 @@
 				<input type="text" id="title" placeholder="Title"/><br>
 				Set the reward<br>
 				<input type="text" id="money" placeholder="Reward"/><br>
-				Give more details. Don't forget to leave contact information.<br>
+				Give more details.<br>
 				<textarea rows="3" cols="50" id="desc"></textarea><br>
+				Contact (email)<br>
+				<input type="text" id="contact" placeholder="Email"/><br>
 				If you have a photo, please enter it in.
 				<input type="URL" id="photo" placeholder="image url" novalidate/><br>
-				<input type="submit" value="Submit" />
+				<input type="submit" value="Submit"/>
 				
 			</form>
 		</div>

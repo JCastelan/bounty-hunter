@@ -3,14 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>BOUNTY HUNTING ONLINE</title>
-		<meta name="description" content="">
+		<title>BOUNTY HUNTING ONLINE - Earn money, Solve Crimes, Help Others</title>
+		<meta name="description" content="Earn money by helping other people with thier problems">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!--<link rel="stylesheet" href="css/normalize.css">-->
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script>
+			$(function() {$("#listings").accordion();});
+  		</script>
 	</head>
 	
 	<body>
@@ -19,20 +22,30 @@
 
 			<a href="index.html"><img src="http://80x15.com/gen_logos/dologo.php?do=true&font_text=BountyHunter.com&text_color=FFFFFF&font_type=twitter&font_size=40&shadow=127" width="577" height="93" alt="BountyHunter.com" /></a>
 			
-			<a href="index.html"><img src="http://www.clker.com/cliparts/1/j/E/w/R/i/sheriff-badge-md.png" width="577" height="93" alt="BountyHunter.com" /></a>
+			<!-- BUTTON -->
+        <div class="btnSet">
+            <a href="report-loss.html" class="btn btn-success btn-lg" role="button">POST</a>
+            <!--DROPDOWN-->
+            <!--<select id="sort">-->
+        		<!--<option value="title">Title</option>-->
+        		<!--<option value="date">Date</option>-->
+        		<!--<option value="money">Reward</option>-->
+        		<!--<option value="loc">City</option>-->
+        		<!--<option value="Type">Crime</option>-->
+        	<!--</select>-->
+        </div>
+			
+			<!-- BADGE -->
+			<!--<a href="index.html"><img src="http://www.clker.com/cliparts/1/j/E/w/R/i/sheriff-badge-md.png" width="577" height="93" alt="BountyHunter.com" /></a>-->
 		</div>
 		
 		<!--ORANGE FONT: http://supalogo.com/up/vSKbC51454226519.png-->
 		
-		<!-- BUTTON -->
-        <div class="btnSet">
-            <a href="report-loss.html" class="btn btn-success btn-lg" role="button">Post</a>
-        </div>
+		
         
 		
 		<div class="main">
-			<div id="listings">
-		    </div>
+			<div id="listings"></div>
 		</div>
 	
 		<!--Scripts at the bottom so to not delay page load-->
@@ -41,8 +54,35 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src="js/main.js"></script>
 		<script>
-			$(function() {$( "#listings" ).accordion({active:false});});
+			$(function() {$("#listings").accordion();});
   		</script>
+  		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+				<script src="https://apis.google.com/js/platform.js" async defer></script>
+ 			 	<g:plusone></g:plusone>
+
 
 	</body>
 </html>

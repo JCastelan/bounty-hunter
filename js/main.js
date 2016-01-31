@@ -7,7 +7,8 @@ var listRef = firebaseRef.child("listings");
 // ************************
 
 // In handling data, we manipulate the Listing object. 
-function Listing (date, desc, loc, money, photo, title, type) {
+function Listing (contact, date, desc, loc, money, photo, title, type) {
+	this.contact = contact;
 	this.date = date;
 	this.desc = desc;
 	this.loc = loc;
@@ -69,6 +70,9 @@ function displayListing (listing) {
 	
     var listingDescbox =$("<div>",{id:"listDescbox"});
 	listingDescbox.append(listingDesc);
+    var listingContact =$("<p>",{id:"listContact"});
+    listingContact.append("Contact: "+listing.contact);
+	listingDescbox.append(listingContact);
 	
     var listingType =$("<span>",{id:"listType"});
     listingType.append("Type of Crime: "+listing.type);
@@ -79,8 +83,21 @@ function displayListing (listing) {
 	listingBox.append(listingDescbox);
 	
     var listingMoney =$("<p>",{id:"listMoney"});
-    listingMoney.append("Offer stands at:  "+listing.money);
+    listingMoney.append("Reward: $"+listing.money);
 	listingBox.append(listingMoney);
+	
+	var fackbook =$("<div>",{class:"fb-share-button"});
+	fackbook.attr("data-href",document.url);
+	fackbook.attr("data-layout","button_count");
+	listingTitle.append(fackbook);
+	
+	var gogle =$("<div>",{class:"g-plusone"});
+	gogle.attr("data-href",document.url);
+	listingTitle.append(gogle);
+	
+	var twater =$("<a>",{class:"twitter-share-button"});
+	twater.attr("href","https://twitter.com/intent/tweet?url="+document.url);
+	listingTitle.append(twater);
 }
 
 function displayDetail (listing) {
@@ -103,6 +120,7 @@ function displayDetail (listing) {
 //read from create page
 function createNewListing () {
 	var listing = new Listing (
+		$('#contact').val(),
 		$('#date').val(),
 		$('#desc').val(), 
 		$('#loc').val(), 
@@ -122,6 +140,7 @@ function addToFB (listing) {
 //read all entries from firebaseRef
 function readAllFromFBList () {
 	listRef.on("child_added", function(snapshot) {
+		console.log(snapshot.val());
 		displayListing(snapshot.val());
 	});
 }
@@ -149,18 +168,25 @@ function removeFromFB (key) {
 // ****** Testing *********
 // ************************
 
-// for (var i = 0; i < 10; i++) {
-// 	var listing = new Listing ("2000-2-30", "hairy stuff", "Santa Cruz", 40, "empty", "Lost Hair " + i, "LF");
-// 	displayListing(listing);
+
+
+// var testListings = 10;
+// listRef.set({}); // clear db for testing
+// for (var i = 0; i < testListings; i++) {
+// 	var listing = new Listing (
+// 		"hairluver4lyf3@ymail.edu",
+// 		"2000-2-30", 
+// 		"I lost a bunch of my hair! I love my hair so much; I need it back!",
+// 		"Santa Cruz", 
+// 		Math.round(Math.random()*40), 
+// 		"https://i.ytimg.com/vi/oM1EVAYahFE/maxresdefault.jpg", 
+// 		"Lost Hair " + i, 
+// 		"LF"
+// 	);
+// 	addToFB(listing);
 // }
 
-var testListings = 10;
-listRef.set({}); // clear db for testing
-for (var i = 0; i < testListings; i++) {
-	var listing = new Listing ("2000-2-30", "hairy stuff", "Santa Cruz", 40, "https://i.ytimg.com/vi/oM1EVAYahFE/maxresdefault.jpg", "Lost Hair " + i, "LF");
-	addToFB(listing);
-}
-
+var sort=$("#sort").val();
 readAllFromFBList();
 //readSpecificFromFBList(1, 2);
 
